@@ -1,6 +1,6 @@
 <template>
     <div id= 'new-employee'>
-        <h1>New Employee</h1>
+        
     </div>
 </template>
 
@@ -12,6 +12,9 @@ export default{
         return{
             
         }
+    },
+    save(){
+        
     }
 }
 

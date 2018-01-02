@@ -7,8 +7,13 @@
                 </li>
                 <li v-for="employee in employees"
                     v-bind:key="employee.emp_id" class="collection-item">
-                    <div class="chip">{{employee.location}}</div>
+                    <div class="chip">{{employee.emp_id}}</div>
                     {{employee.name}}
+
+                    <router-link class="secondary-content" v-bind:to="{name: 'view-employee',params:{id:employee.emp_id}}">
+                    <i class="fa fa-eye"/>
+                    </router-link>
+                    
                 </li>
 
             </ul>
@@ -34,7 +39,7 @@ export default{
     created(){
         db.collection('employees').get().then
         (querySnapshot => {querySnapshot.forEach(doc=> {
-            //console.log(doc.data());
+            console.log(doc.data());
             const data = {
                     'id':doc.id,
                     'emp_id':doc.data().id,
